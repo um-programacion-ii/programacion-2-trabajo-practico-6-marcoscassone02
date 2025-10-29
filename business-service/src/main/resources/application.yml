@@ -1,0 +1,18 @@
+# src/main/resources/application.yml
+server:
+  port: 8082
+
+spring:
+  application:
+    name: business-service
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 2000      # ms
+            readTimeout: 4000         # ms
+            loggerLevel: basic        # none/basic/headers/full
+
+data-service:
+  base-url: http://localhost:8081   # donde corre tu data-service
